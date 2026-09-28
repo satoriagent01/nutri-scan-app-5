@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriScan - Rastreador de Nutrición</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🥗 NutriScan</h1>
+        <p>Rastrea tu nutrición escaneando productos</p>
+    </header>
+
+    <main>
+        <!-- Sección de escaneo -->
+        <section id="scan-section">
+            <h2>📸 Escanear Producto</h2>
+            <div class="upload-area">
+                <input type="file" id="image-input" accept="image/*" capture="environment">
+                <label for="image-input" class="upload-label">
+                    <span>Toca para tomar foto o seleccionar imagen</span>
+                </label>
+            </div>
+            <div id="scan-progress" class="progress-bar" style="display: none;">
+                <div class="progress-fill"></div>
+                <span>Procesando imagen...</span>
+            </div>
+            <div id="scan-result" class="result-container" style="display: none;">
+                <h3>Resultado del Escaneo</h3>
+                <div id="nutrition-info"></div>
+                <button id="save-product-btn" class="btn btn-primary">Guardar Producto</button>
+            </div>
+        </section>
+
+        <!-- Sección de planificador de comidas -->
+        <section id="meal-planner-section">
+            <h2>🍽️ Planificador de Comidas</h2>
+            <div class="meal-input">
+                <input type="text" id="meal-name" placeholder="Nombre de la comida">
+                <input type="number" id="meal-date" placeholder="Fecha (YYYY-MM-DD)" value="">
+            </div>
+            <div id="meals-list"></div>
+            <button id="add-meal-btn" class="btn btn-secondary">Agregar Comida</button>
+        </section>
+
+        <!-- Sección de historial -->
+        <section id="history-section">
+            <h2>📊 Historial</h2>
+            <div id="history-list"></div>
+        </section>
+
+        <!-- Sección de productos guardados -->
+        <section id="saved-products-section">
+            <h2>📦 Productos Guardados</h2>
+            <div id="products-list"></div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
